@@ -4,6 +4,8 @@
 
 with `vue.js` + `vue-router` + `webpack`
 
+![shortcut]('./static/img/example.png')
+
 ## Build Setup
 
 ``` bash
