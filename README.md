@@ -4,7 +4,7 @@
 
 with `vue.js` + `vue-router` + `webpack`
 
-![shortcut]('./static/img/example.png')
+![shortcut]('http://7xokxd.com1.z0.glb.clouddn.com/example.png')
 
 ## Build Setup
 
