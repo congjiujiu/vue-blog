@@ -82,7 +82,7 @@ export default {
   computed: {},
   props: {
       id: {
-          type: Number,
+          type: String,
           required: true
       },
       title: {
@@ -109,8 +109,7 @@ export default {
   ready() {},
   attached() {},
   methods: {
-      showArticle (e, id) {
-            console.log(e, id);
+      showArticle (id) {
           window.router.go({path:'/article', query:{id: id}});
       },
       toggleLike () {

@@ -7,13 +7,17 @@
 <script>
 export default {
   data() {
-      let mockContent = `<h2>content id is </h2> <h5> and this is the hhhh and some heheheh <h5>`;
-    return {
-        content: mockContent
-    };
+      var mockContent = '';
+      return {
+          content: mockContent
+      };
   },
   computed: {},
-  ready() {},
+  ready() {
+      var self = this;
+      console.log(localStorage.getItem(self.$route.query.id));
+      self.content = localStorage.getItem(self.$route.query.id);
+  },
   attached() {},
   methods: {},
   components: {}

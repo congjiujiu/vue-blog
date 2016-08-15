@@ -70,10 +70,10 @@
             <img src="../static/img/logo.png" alt="logo" class='logo'/>
         </div>
         <ul>
-            <li><a v-link="'/home'">Home</a></li>
-            <li><a v-link="'/blog'">Blog</a></li>
-            <li><a v-link="'/link'">Link</a></li>
-            <li><a v-link="'/about'">About</a></li>
+            <li class='home'><a v-link="'/home'">Home</a></li>
+            <li class='blog'><a v-link="'/blog'">Blog</a></li>
+            <li class='link'><a v-link="'/link'">Link</a></li>
+            <li class='about'><a v-link="'/about'">About</a></li>
         </ul>
     </div>
     <div class="container">

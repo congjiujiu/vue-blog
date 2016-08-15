@@ -18,14 +18,17 @@ export default {
   },
   computed: {},
   ready() {
+      $('.banner .home>a').css('color', '#000');
       var self = this;
 
       $.ajax({
           type: 'GET',
           url: window.sSession.server + 'getArticles.php'
       }).done(function (date) {
-          self.articles = JSON.parse(date);
-          console.log(JSON.parse(date));
+          let sdate = self.articles = JSON.parse(date);
+          sdate.map(function (v) {
+              localStorage.setItem(v.id, v.content);
+          });
       });
   },
   attached() {},
