@@ -98,7 +98,7 @@ export default {
           default: false
       },
       likeNumbers: {
-          type: Number,
+          type: String,
           default: 0
       },
       time: {

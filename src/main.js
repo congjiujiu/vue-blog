@@ -26,6 +26,9 @@ router.redirect({
     '*': '/home'
 });
 
+let sSession = window.sSession = {};
+window.sSession.server = 'http://139.129.24.127/vueblog/data/';
+
 router.start(App, '#app');
 
 /* eslint-disable no-new */
