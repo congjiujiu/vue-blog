@@ -52,13 +52,13 @@
 </style>
 
 <template lang="html">
-    <div class="wrapper" @click="showArticle(id)">
+    <div class="wrapper">
         <h2 id='title'>{{title}}</h2>
         <hr>
         <div class="content">{{content}}</div>
         <div class="more">
             <div class="like">
-                <div class="img-wrap" @click="toggleLike()">
+                <div class="img-wrap">
                     <img v-if="like" src="../../static/img/liked.png" alt="liked"/>
                     <img v-else src="../../static/img/like.png" alt="like"/>
                 </div>
@@ -106,17 +106,29 @@ export default {
           required: true
       }
   },
-  ready() {},
+     ready() {
+         let self = this;
+         $('.wrapper').unbind();
+         $('.wrapper').bind('click', function (e) {
+             if (e.target.nodeName.toUpperCase() === 'IMG') {
+                 self.toggleLike(e.target);
+             } else {
+                 self.showArticle(self.id);
+             }
+         });
+  },
   attached() {},
   methods: {
       showArticle (id) {
           window.router.go({path:'/article', query:{id: id}});
       },
-      toggleLike () {
-          if ($('img-wrap>img').attr('alt') === 'like') {
-              console.log('like');
+      toggleLike (node) {
+          if ($(node).attr('alt') === 'like') {
+              $(node).attr('alt', 'liked');
+              $(node).attr('src', '../../static/img/liked.png');
           } else {
-              console.log('liked');
+              $(node).attr('alt', 'like');
+              $(node).attr('src', '../../static/img/like.png');
           }
       }
   },
