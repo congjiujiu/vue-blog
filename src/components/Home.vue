@@ -48,7 +48,7 @@ export default {
 
     .container > div {
         display: inline-block;
-        width: 46%;
+        width: 42%;
     }
 
     .container > div:nth-child(2n+2) {

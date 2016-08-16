@@ -27,7 +27,6 @@ export default {
               self.content = sdate[self.id];
           });
       }
-      hljs.initHighlightingOnLoad();
   },
   attached() {},
   methods: {},
@@ -35,16 +34,38 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-    .container > div {
+<style lang="css">
+    .container > .content {
         width: 80%;
         align-items: center;
         margin-left: 10%;
         margin-top: 40px;
+        color: #566b78;
     }
 
-    .content pre {
-        background-color: rgb(0, 0, 0);
-        color: rgb(255, 255, 255);
+    .container > div pre, code {
+        background: #f5f7f9;
+        border-bottom: 1px solid #d8dee9;
+        color: #a7adba;
+    }
+
+    .container > div pre {
+        padding: 1em;
+        border-left: 2px solid #69c;
+    }
+
+    .container > div code {
+        padding: 2px 4px;
+        vertical-align: text-bottom;
+    }
+
+    .container a {
+        color: #e81c4f;
+        text-decoration: none;
+    }
+
+    .container img {
+        width: 100%;
+        max-width: 800px;
     }
 </style>

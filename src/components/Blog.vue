@@ -1,7 +1,9 @@
 <style lang="css" scoped>
     .wrapper {
         width: 100%;
-        height: 300px;
+        height: 600px;
+        padding: 0 4%;
+        margin-top: 40px;
         display: inline-block;
     }
 
@@ -10,21 +12,21 @@
     }
 
     hr {
-        margin: 20px 0;
+        margin: 5px 0;
         position: relative;
         left: 0;
-        width: 50px;
+        width: 100px;
     }
 
     .content {
-        height: 170px;
+        height: 470px;
         overflow: hidden;
         color: rgb(135,135,135);
     }
 
     .more {
         height: 20px;
-        margin: 0;
+        margin: 20px 0 0 0;
         position: relative;
         bottom: 0;
         color: rgb(135,135,135);
