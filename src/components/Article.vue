@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="content">
-        {{content}}
+        {{{content}}}
     </div>
 </template>
 
@@ -27,6 +27,7 @@ export default {
               self.content = sdate[self.id];
           });
       }
+      hljs.initHighlightingOnLoad();
   },
   attached() {},
   methods: {},
@@ -34,5 +35,16 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+    .container > div {
+        width: 80%;
+        align-items: center;
+        margin-left: 10%;
+        margin-top: 40px;
+    }
+
+    .content pre {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
 </style>

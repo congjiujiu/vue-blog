@@ -7,6 +7,7 @@
 <script>
 import Blog from './Blog.vue';
 import $ from 'jquery';
+import marked from 'marked';
 
 export default {
   data() {
@@ -25,9 +26,10 @@ export default {
           type: 'GET',
           url: window.sSession.server + 'getArticles.php'
       }).done(function (date) {
-          let sdate = self.articles = JSON.parse(date);
-          sdate.map(function (v) {
-              localStorage.setItem(v.id, v.content);
+          self.articles = JSON.parse(date);
+          self.articles.map(function (article) {
+             article.content = marked(article.content);
+             localStorage.setItem(article.id, article.content);
           });
       });
   },

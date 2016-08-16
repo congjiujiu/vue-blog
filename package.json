@@ -10,8 +10,9 @@
     "test": ""
   },
   "dependencies": {
-    "vue": "^1.0.21",
-    "babel-runtime": "^6.0.0"
+    "babel-runtime": "^6.0.0",
+    "fs": "^0.0.2",
+    "vue": "^1.0.21"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -27,12 +28,15 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
     "function-bind": "^1.0.2",
+    "highlight": "^0.2.4",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.12.0",
     "jquery": "^3.1.0",
     "json-loader": "^0.5.4",
+    "marked": "^0.3.6",
     "node-sass": "^3.8.0",
     "ora": "^0.2.0",
+    "pygmentize-bundled": "^2.3.0",
     "sass-loader": "^4.0.0",
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",

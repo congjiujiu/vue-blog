@@ -52,10 +52,10 @@
 </style>
 
 <template lang="html">
-    <div class="wrapper">
+    <div class="wrapper" id='{{id}}'>
         <h2 id='title'>{{title}}</h2>
         <hr>
-        <div class="content">{{content}}</div>
+        <div class="content">{{{content}}}</div>
         <div class="more">
             <div class="like">
                 <div class="img-wrap">
@@ -113,14 +113,14 @@ export default {
              if (e.target.nodeName.toUpperCase() === 'IMG') {
                  self.toggleLike(e.target);
              } else {
-                 self.showArticle(self.id);
+                 self.showArticle(this.id);
              }
          });
   },
   attached() {},
   methods: {
-      showArticle (id) {
-          window.router.go({path:'/article', query:{id: id}});
+      showArticle (sid) {
+          window.router.go({path:'/article', query:{id: sid}});
       },
       toggleLike (node) {
           if ($(node).attr('alt') === 'like') {
