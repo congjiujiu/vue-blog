@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 export default {
   data() {
       var mockContent = '';
@@ -15,8 +16,17 @@ export default {
   computed: {},
   ready() {
       var self = this;
-      console.log(localStorage.getItem(self.$route.query.id));
-      self.content = localStorage.getItem(self.$route.query.id);
+      if (localStorage.getItem(self.$route.query.id)) {
+          self.content = localStorage.getItem(self.$route.query.id);
+      } else {
+          $.ajax({
+              type: 'GET',
+              url: window.sSession.server + 'getArticles.php'
+          }).done(function (date) {
+              let sdate = self.articles = JSON.parse(date);
+              self.content = sdate[self.id];
+          });
+      }
   },
   attached() {},
   methods: {},
