@@ -62,6 +62,7 @@
     }
 
     .footer {
+        margin-top: 30px;
         height: 60px;
         line-height: 60px;
         width: 100%;

@@ -44,6 +44,8 @@ export default {
 <style lang="css">
     .container {
         margin-top: 40px;
+        width: 80%;
+        margin-left: 10%;
         border-top: 1px solid #a7adba;
         border-left: 1px solid #a7adba;
         border-right: 1px solid #a7adba;
@@ -54,6 +56,7 @@ export default {
         width: 80%;
         align-items: center;
         margin-left: 10%;
+        margin-top: 20px;
         color: #566b78;
     }
 
