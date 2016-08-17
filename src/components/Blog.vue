@@ -123,6 +123,7 @@ export default {
   methods: {
       showArticle (sid) {
           window.router.go({path:'/article', query:{id: sid}});
+          this.$dispatch('article', this.title);
       },
       toggleLike (node) {
           if ($(node).attr('alt') === 'like') {

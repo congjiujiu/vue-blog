@@ -6,6 +6,7 @@
 
 <script>
 import $ from 'jquery';
+import marked from 'marked';
 export default {
   data() {
       var mockContent = '';
@@ -16,20 +17,26 @@ export default {
   computed: {},
   ready() {
       var self = this;
-      if (localStorage.getItem(self.$route.query.id)) {
-          self.content = localStorage.getItem(self.$route.query.id);
+      var aid = self.$route.query.id;
+      if (localStorage.getItem(aid)) {
+          self.content = localStorage.getItem(aid);
       } else {
           $.ajax({
               type: 'GET',
               url: window.sSession.server + 'getArticles.php'
           }).done(function (date) {
               let sdate = self.articles = JSON.parse(date);
-              self.content = sdate[self.id];
+              self.content = marked(sdate[aid]['content']);
+              self.showTitle(sdate[aid]['title']);
           });
       }
   },
   attached() {},
-  methods: {},
+  methods: {
+      showTitle(title) {
+          this.$dispatch('article', title);
+      }
+  },
   components: {}
 };
 </script>

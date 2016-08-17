@@ -21,6 +21,7 @@ export default {
   ready() {
       $('.banner .home>a').css('color', '#000');
       var self = this;
+      this.$dispatch('home');
 
       $.ajax({
           type: 'GET',
