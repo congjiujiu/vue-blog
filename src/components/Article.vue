@@ -42,11 +42,18 @@ export default {
 </script>
 
 <style lang="css">
+    .container {
+        margin-top: 40px;
+        border-top: 1px solid #a7adba;
+        border-left: 1px solid #a7adba;
+        border-right: 1px solid #a7adba;
+        box-shadow: 3px 2px 10px #566b78;
+    }
+
     .container > .content {
         width: 80%;
         align-items: center;
         margin-left: 10%;
-        margin-top: 40px;
         color: #566b78;
     }
 
