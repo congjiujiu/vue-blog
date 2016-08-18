@@ -22,17 +22,28 @@ export default {
       $('.banner .home>a').css('color', '#000');
       var self = this;
       this.$dispatch('home');
-
-      $.ajax({
-          type: 'GET',
-          url: window.sSession.server + 'getArticles.php'
-      }).done(function (date) {
-          self.articles = JSON.parse(date);
+      var homeData;
+      if (localStorage.getItem('homeData')) {
+          homeData = localStorage.getItem('homeData');
+          self.articles = JSON.parse(homeData);
           self.articles.map(function (article) {
              article.content = marked(article.content);
              localStorage.setItem(article.id, article.content);
           });
-      });
+      } else {
+          $.ajax({
+              type: 'GET',
+              url: window.sSession.server + 'getArticles.php'
+          }).done(function (data) {
+              localStorage.setItem('homeData', data);
+              homeData = data;
+              self.articles = JSON.parse(homeData);
+              self.articles.map(function (article) {
+                 article.content = marked(article.content);
+                 localStorage.setItem(article.id, article.content);
+              });
+          });
+      }
   },
   attached() {},
   methods: {},

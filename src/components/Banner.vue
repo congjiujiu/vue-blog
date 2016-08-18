@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 export default {
     data() {
         let mockTitle = '';
@@ -30,10 +31,12 @@ export default {
         'show-mine' () {
             var self = this;
             self.title = 'Nighting';
+            $('.container').removeClass('article-border');
         },
         'show-title' (stitle) {
             var self = this;
             self.title = stitle;
+            $('.container').addClass('article-border');
         }
     },
     methods: {},

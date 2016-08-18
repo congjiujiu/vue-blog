@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="css">
-    .container {
+    .article-border {
         margin-top: 40px;
         width: 80%;
         margin-left: 10%;

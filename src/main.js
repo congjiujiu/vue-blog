@@ -28,6 +28,7 @@ router.redirect({
 
 let sSession = window.sSession = {};
 window.sSession.server = 'http://139.129.24.127/vueblog/data/';
+localStorage.clear();
 
 router.start(App, '#app');
 
